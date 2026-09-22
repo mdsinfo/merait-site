@@ -141,7 +141,7 @@ export function LogisticsPlatform() {
         </div>
       </section>
 
-      <section className="mt-16 bg-[#f5f7fb]">
+      <section className="mt-16 bg-[#f5f7fb] dark:bg-white/[0.03]">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
           <Tag>03 / Recursos</Tag>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">Principais funcionalidades</h2>
@@ -162,7 +162,7 @@ export function LogisticsPlatform() {
         <p className="mt-4 max-w-3xl text-base leading-7 text-muted">Configure os parâmetros da operação. Com essas informações, o sistema realiza automaticamente a reserva das janelas operacionais disponíveis.</p>
         <ul className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {parameters.map((item) => (
-            <li key={item} className="border-l-[3px] border-brand bg-[#f5f7fb] px-5 py-5 text-sm">{item}</li>
+            <li key={item} className="border-l-[3px] border-brand bg-[#f5f7fb] px-5 py-5 text-sm text-[#101828] dark:bg-white/5 dark:text-foreground">{item}</li>
           ))}
         </ul>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-4 rounded-2xl bg-ink px-6 py-8 text-white">
@@ -189,14 +189,14 @@ export function LogisticsPlatform() {
             <p className="mt-3 text-sm leading-6 text-muted">Tempo médio, capacidade, prioridade e regras operacionais podem ser definidos de forma independente para cada tipo de veículo.</p>
             <ul className="mt-6 grid gap-2 sm:grid-cols-2">
               {vehicleParams.map((item) => (
-                <li key={item} className="rounded-lg bg-[#f1f4f9] px-4 py-3 text-sm">{item}</li>
+                <li key={item} className="rounded-lg bg-[#f1f4f9] px-4 py-3 text-sm text-[#101828] dark:bg-white/5 dark:text-foreground">{item}</li>
               ))}
             </ul>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb]">
+      <section className="bg-[#f5f7fb] dark:bg-white/[0.03]">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
           <Tag>06 / Comunicação</Tag>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">Comunicação automatizada com todos os envolvidos</h2>
@@ -264,7 +264,7 @@ export function LogisticsPlatform() {
       <section className="mx-auto max-w-6xl px-5 py-20 md:px-8">
         <Tag>09 / Dashboard executivo</Tag>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">Visibilidade para decidir melhor.</h2>
-        <div className="mt-8 rounded-3xl border border-border bg-[#f4f6fb] p-4 shadow-[0_20px_55px_rgba(32,38,80,0.07)] md:p-7">
+        <div className="mt-8 rounded-3xl border border-border bg-[#f4f6fb] p-4 shadow-[0_20px_55px_rgba(32,38,80,0.07)] dark:bg-white/[0.04] md:p-7">
           <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-semibold tracking-[0.16em] text-muted">OPERAÇÃO LOGÍSTICA</p>
@@ -288,7 +288,7 @@ export function LogisticsPlatform() {
                 <p className="text-sm font-semibold">{dock.name}</p>
                 <div className="mt-3 flex gap-1">
                   {["08:00", "09:00", "10:00", "11:00"].map((slot, index) => (
-                    <span key={slot} className={`flex-1 rounded px-1 py-3 text-center text-xs ${index === 1 ? "bg-lime text-ink" : "bg-[#e8edfb] text-brand"}`}>{slot}</span>
+                    <span key={slot} className={`flex-1 rounded px-1 py-3 text-center text-xs ${index === 1 ? "bg-lime text-ink" : "bg-[#e8edfb] text-brand dark:bg-white/10 dark:text-foreground"}`}>{slot}</span>
                   ))}
                 </div>
                 <p className="mt-3 text-xs text-muted">{dock.status}</p>
@@ -298,7 +298,7 @@ export function LogisticsPlatform() {
         </div>
       </section>
 
-      <section className="bg-[#f5f7fb]">
+      <section className="bg-[#f5f7fb] dark:bg-white/[0.03]">
         <div className="mx-auto max-w-6xl px-5 py-20 md:px-8">
           <Tag>10 / Benefícios</Tag>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">Controle ponta a ponta da operação</h2>

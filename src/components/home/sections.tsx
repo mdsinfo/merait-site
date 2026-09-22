@@ -150,7 +150,7 @@ export function Products() {
   ];
 
   return (
-    <section className="bg-[#f5f7fb]" id="produtos">
+    <section className="bg-[#f5f7fb] dark:bg-white/[0.03]" id="produtos">
       <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-link">Produtos MERAIT</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">Tecnologia aplicada à operação</h2>
