@@ -1,0 +1,226 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f4f6fb;
+  --foreground: #101828;
+  --card: #ffffff;
+  --muted: #667085;
+  --border: #e4e7ec;
+  --link: #2d2e91;
+  --ink: #101828;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0b1020;
+  --foreground: #f8fafc;
+  --card: #12182b;
+  --muted: #98a2b3;
+  --border: rgba(255, 255, 255, 0.1);
+  --link: #b7c0ff;
+  --ink: #070b16;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-link: var(--link);
+  --color-ink: #101828;
+  --color-cyan: #22d3ee;
+  --color-lime: #7bea23;
+  --color-brand: #2d2e91;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #2d2e91;
+  color: #ffffff;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #101828;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(ellipse at 25% 20%, #000 15%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 25% 20%, #000 15%, transparent 72%);
+}
+
+.particle-field {
+  background-image: radial-gradient(circle, rgba(34, 211, 238, 0.75) 1px, transparent 1.4px);
+  background-size: 54px 54px;
+  opacity: 0.35;
+  animation: drift 48s linear infinite;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.orb-cyan {
+  width: 34rem;
+  height: 34rem;
+  left: -8rem;
+  top: -6rem;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.28), transparent 68%);
+  animation: float-a 16s ease-in-out infinite;
+}
+
+.orb-brand {
+  width: 32rem;
+  height: 32rem;
+  right: -6rem;
+  top: 8rem;
+  background: radial-gradient(circle, rgba(45, 46, 145, 0.55), transparent 68%);
+  animation: float-b 18s ease-in-out infinite;
+}
+
+.orb-lime {
+  width: 24rem;
+  height: 24rem;
+  left: 30%;
+  bottom: -8rem;
+  background: radial-gradient(circle, rgba(123, 234, 35, 0.18), transparent 68%);
+  animation: float-a 20s ease-in-out infinite reverse;
+}
+
+.glass-card-dark {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+}
+
+.logo-tile {
+  filter: grayscale(1);
+  transition: transform 0.35s ease, filter 0.35s ease, background 0.35s ease;
+}
+
+.logo-tile:hover {
+  filter: none;
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.brand-line {
+  height: 2px;
+  background-image: linear-gradient(135deg, #22d3ee, #2d2e91, #7bea23);
+  background-size: 220% 220%;
+  animation: merait-pan 8s ease infinite;
+}
+
+.animate-marquee {
+  animation: marquee 42s linear infinite;
+}
+
+.marquee:hover .animate-marquee,
+.marquee:focus-within .animate-marquee {
+  animation-play-state: paused;
+}
+
+.scene-3d {
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+@keyframes merait-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 54px 108px;
+  }
+}
+
+@keyframes float-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(24px, 18px, 0);
+  }
+}
+
+@keyframes float-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-20px, 24px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
