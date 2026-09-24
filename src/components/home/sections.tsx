@@ -8,6 +8,7 @@ import { Counter } from "@/components/motion/counter";
 import { differentials, methodology, segments, stats, timeline } from "@/lib/company";
 import { cases } from "@/lib/cases";
 import { formatPostDate, posts } from "@/lib/blog";
+import { ownedProducts } from "@/lib/owned-products";
 import { solutions } from "@/lib/solutions";
 
 export function Differentials() {
@@ -77,45 +78,81 @@ export function About() {
   );
 }
 
+export function BusinessLines() {
+  const lines = [
+    { title: "Consultoria", text: "SAP S/4HANA, rollout, conversão e projetos fiscais com dono de processo e critério de go-live." },
+    { title: "Produtos", text: "Dock Scheduling, Yard RFID, AI Enterprise e CRM Integration Suite, com integração ao SAP." },
+    { title: "Serviços gerenciados", text: "AMS SAP para sustentar a operação, priorizar demanda e evoluir o ambiente depois do projeto." },
+    { title: "Inovação", text: "SAP BTP, Copilot Studio, agentes e automação sem descaracterizar o sistema de registro." },
+  ];
+  return (
+    <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
+      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-link">Como a MERAIT atua</p>
+      <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">Consultoria, produtos, AMS e inovação</h2>
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        {lines.map((item) => (
+          <article key={item.title} className="rounded-3xl border border-border bg-card p-6">
+            <h3 className="text-lg font-semibold">{item.title}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+const solutionLabels: Record<string, string> = {
+  "sap-s4hana": "SAP Consulting",
+  "ams-sap": "AMS SAP",
+  integracoes: "Integrações",
+  "inteligencia-artificial": "Inteligência Artificial",
+  "sap-btp": "SAP BTP",
+};
+
 export function Solutions() {
+  const featured = ["sap-s4hana", "ams-sap", "integracoes", "inteligencia-artificial", "sap-btp"];
+  const solutionCards = [
+    ...featured.map((slug) => {
+      const item = solutions.find((entry) => entry.slug === slug)!;
+      return { title: solutionLabels[slug], text: item.description, href: item.href, icon: item.icon };
+    }),
+    {
+      title: "Produtos Proprietários",
+      text: "Dock Scheduling, Yard RFID, AI Enterprise e CRM Integration Suite, com página própria e integração ao SAP.",
+      href: "/produtos",
+      icon: "boxes",
+    },
+    {
+      title: "Projetos Fiscais",
+      text: "NF-e, CT-e, MDF-e, SPED, mensageria fiscal e preparação para a Reforma Tributária dentro do SAP.",
+      href: "/solucoes#fiscal",
+      icon: "receipt",
+    },
+  ];
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28" id="solucoes">
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-link">Soluções</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">Onde o SAP pesa no resultado</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-link">Soluções MERAIT</p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-5xl">Consultoria, AMS, integrações, IA e produtos</h2>
         </div>
         <Link href="/solucoes" className="text-sm font-semibold text-link">Ver todas as soluções</Link>
       </div>
       <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {solutions.map((item, index) => (
-          <MotionCard key={item.slug} delay={index * 0.04}>
+        {solutionCards.map((item, index) => (
+          <MotionCard key={item.title} delay={index * 0.04}>
             <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-6">
               <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-[#101828] text-lime">
                 <Icon name={item.icon} className="size-5" />
               </span>
-              <h3 className="mt-5 text-xl font-semibold">{item.navLabel}</h3>
-              <p className="mt-2 flex-1 text-sm leading-6 text-muted">{item.description}</p>
+              <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-6 text-muted">{item.text}</p>
               <Link href={item.href} className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-link">
                 Explorar <ArrowRight className="size-4" />
               </Link>
             </article>
           </MotionCard>
         ))}
-        <MotionCard delay={0.2}>
-          <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-6">
-            <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-[#101828] text-lime">
-              <Icon name="receipt" className="size-5" />
-            </span>
-            <h3 className="mt-5 text-xl font-semibold">Fiscal e Tributário</h3>
-            <p className="mt-2 flex-1 text-sm leading-6 text-muted">
-              NF-e, CT-e, MDF-e, SPED, mensageria fiscal e preparação para a Reforma Tributária dentro do SAP.
-            </p>
-            <Link href="/solucoes#fiscal" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-link">
-              Explorar <ArrowRight className="size-4" />
-            </Link>
-          </article>
-        </MotionCard>
       </div>
     </section>
   );
@@ -155,9 +192,23 @@ export function Products() {
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-link">Produtos MERAIT</p>
         <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">Tecnologia aplicada à operação</h2>
         <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-          Recebimento fiscal, escrituração e gestão logística. Três produtos proprietários, cada um com um processo claro.
+          Dock Scheduling, Yard RFID, AI Enterprise e CRM Integration Suite. Inbound e FastNFe seguem na frente fiscal.
         </p>
-        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {ownedProducts.map((product, index) => (
+            <MotionCard key={product.slug} delay={index * 0.04}>
+              <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-link">{product.name}</p>
+                <h3 className="mt-3 text-2xl font-semibold tracking-tight">{product.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-6 text-muted">{product.description}</p>
+                <Link href={product.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-link">
+                  Conhecer o produto <ArrowRight className="size-4" />
+                </Link>
+              </article>
+            </MotionCard>
+          ))}
+        </div>
+        <div className="mt-4 grid gap-4 lg:grid-cols-2">
           {items.map((item) => (
             <article key={item.id} id={item.id} className="flex scroll-mt-24 flex-col rounded-3xl border border-border bg-card p-6 md:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-link">{item.label}</p>
@@ -185,8 +236,8 @@ export function Products() {
               Agendamento de cargas, docas, RFID e integração SAP em um único produto. Dock &amp; Yard Management para recebimento e expedição.
             </p>
           </div>
-          <Link href="/produto-agendamento-cargas" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-lime">
-            Ver a plataforma <ArrowRight className="size-4" />
+          <Link href="/produtos" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-lime">
+            Ver os produtos <ArrowRight className="size-4" />
           </Link>
         </article>
       </div>

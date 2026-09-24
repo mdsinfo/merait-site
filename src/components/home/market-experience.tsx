@@ -15,7 +15,7 @@ const filters = ["Todos", ...experienceCategories] as const;
 export function MarketExperience({
   initialFilter = "Todos",
   lockFilter,
-  heading = "Empresas onde nossos especialistas já atuaram",
+  heading = "Experiência construída em grandes empresas",
   intro = "Experiência construída em projetos estratégicos realizados em empresas líderes de seus segmentos.",
   id = "experiencia",
 }: {

@@ -121,8 +121,18 @@ export const segments = [
   },
   {
     icon: "factory",
-    title: "Indústria",
+    title: "Manufatura",
     text: "Produção, custos, qualidade e integração entre chão de fábrica e backoffice.",
+  },
+  {
+    icon: "flask",
+    title: "Bebidas",
+    text: "Envasamento, lotes, distribuição e obrigações fiscais de uma operação de alto giro.",
+  },
+  {
+    icon: "wheat",
+    title: "Alimentos",
+    text: "Receita, validade, rastreabilidade e integração entre fábrica, fiscal e canais.",
   },
   {
     icon: "truck",

@@ -7,6 +7,37 @@ export type Material = {
 
 export const materials: Material[] = [
   {
+    slug: "checklist-migracao-s4hana",
+    title: "Checklist para migração SAP S/4HANA",
+    description: "Pontos de código, dado, interface e corte antes de sair do ECC.",
+    sections: [
+      {
+        title: "Legado",
+        items: [
+          "Inventariar customizações que o negócio ainda usa.",
+          "Classificar interfaces que não podem parar no corte.",
+          "Medir a qualidade de cliente, material e fornecedor.",
+        ],
+      },
+      {
+        title: "Caminho",
+        items: [
+          "Decidir implantação, conversão ou rollout com o diagnóstico.",
+          "Separar o que entra na primeira onda.",
+          "Definir o que fica no core e o que vai para a BTP.",
+        ],
+      },
+      {
+        title: "Corte",
+        items: [
+          "Escrever o critério de go-live antes da data.",
+          "Preparar teste integrado com o negócio.",
+          "Planejar hypercare e a passagem para AMS.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "checklist-reforma-tributaria",
     title: "Checklist da Reforma Tributária no SAP",
     description: "Pontos de processo, cadastro e mensageria para o roadmap de IBS e CBS.",
@@ -39,8 +70,8 @@ export const materials: Material[] = [
   },
   {
     slug: "roteiro-ams-sap",
-    title: "Roteiro de AMS SAP",
-    description: "Como organizar suporte funcional, técnico, hypercare e melhoria contínua.",
+    title: "Guia de AMS SAP",
+    description: "Como organizar SLA, governança, hypercare e evolução contínua.",
     sections: [
       {
         title: "Modelo de atendimento",
@@ -70,7 +101,7 @@ export const materials: Material[] = [
   },
   {
     slug: "guia-integracao-sap",
-    title: "Guia de integração SAP",
+    title: "Guia de Integrações SAP",
     description: "Decisões de arquitetura antes de conectar CRM, compras, APIs e middleware.",
     sections: [
       {

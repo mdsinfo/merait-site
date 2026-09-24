@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@/components/layout/analytics";
 import { ChatWidget } from "@/components/layout/chat-widget";
@@ -21,7 +22,7 @@ const googleVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "MERAIT | Consultoria Especializada em SAP, AMS, Integração e Inteligência Artificial",
+    default: "Consultoria SAP, AMS e Integrações | MERAIT",
     template: "%s | MERAIT",
   },
   description: siteConfig.description,
@@ -33,13 +34,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     siteName: siteConfig.name,
-    title: "MERAIT | Consultoria Especializada em SAP, AMS, Integração e Inteligência Artificial",
+    title: "Consultoria SAP, AMS e Integrações | MERAIT",
     description: siteConfig.description,
     url: siteConfig.url,
   },
   twitter: {
     card: "summary_large_image",
-    title: "MERAIT | Consultoria Especializada em SAP, AMS, Integração e Inteligência Artificial",
+    title: "Consultoria SAP, AMS e Integrações | MERAIT",
     description: siteConfig.description,
   },
   robots: { index: true, follow: true },
@@ -70,6 +71,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="conteudo">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Link
+          href="/agendamento"
+          className="fixed bottom-5 left-5 z-30 inline-flex items-center rounded-full bg-brand px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20"
+        >
+          Agendar reunião
+        </Link>
         <ChatWidget />
         <Analytics />
         <OrganizationJsonLd />

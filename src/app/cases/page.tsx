@@ -16,8 +16,8 @@ export default function CasesPage() {
     <>
       <PageHero
         eyebrow="Cases de sucesso"
-        title="Quatro frentes em que a operação sente a diferença"
-        description="Integração CRM x SAP, portal de fornecedores, documentos fiscais e AMS. Cada relato descreve o que passou a funcionar no processo."
+        title="Relatos de processo, sem métrica inventada"
+        description="Implementação SAP WM, ciclo de fornecedores, CRM x SAP, fiscal e AMS. Cada relato descreve o que passou a funcionar. Nenhum percentual foi acrescentado."
         crumbs={[
           { name: "Home", path: "/" },
           { name: "Cases", path: "/cases" },

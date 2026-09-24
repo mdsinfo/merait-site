@@ -102,6 +102,92 @@ export const cases: CaseStudy[] = [
     results: ["Sustentação contínua", "Hypercare", "Monitoramento", "Evolução funcional"],
     stack: ["AMS", "Suporte funcional", "Suporte técnico", "Hypercare"],
   },
+  {
+    slug: "implementacao-sap-wm",
+    title: "Implementação SAP WM para gestão de armazém",
+    result: "Processos de armazenagem estruturados no SAP",
+    metric: "WM",
+    metricLabel: "administração de depósitos",
+    sector: "Logística",
+    summary:
+      "Projeto estruturado a partir de assessment e Business Blueprint para implementação de processos de administração de depósitos no SAP. Case anonimizado, sem métrica de resultado.",
+    context:
+      "A operação precisava levar a administração de depósitos para o SAP, com estrutura de armazém, movimentos e procedimentos documentados antes da entrada em operação.",
+    challenge:
+      "Estoque e atividade de armazém sem um desenho único de armazenagem, putaway, picking e inventário.",
+    approach: [
+      "Assessment e Business Blueprint do processo de depósitos.",
+      "Definição e configuração do armazém, com atribuição à planta e ao depósito.",
+      "Tipos e zonas de armazenagem, posições de depósito, putaway e picking.",
+      "Estratégias FIFO e FEFO, inventário e dados mestres.",
+      "Recebimento, saída de materiais, cutover e transportes SAP.",
+      "Treinamento e manuais de usuário.",
+    ],
+    results: [
+      "Processos de armazenagem estruturados no SAP",
+      "Procedimentos operacionais documentados",
+      "Preparação de dados e usuários para entrada em operação",
+      "Integração entre gestão de estoque e atividades do armazém",
+    ],
+    stack: ["SAP WM", "Dados mestres", "Cutover", "Manuais de usuário"],
+  },
+  {
+    slug: "ciclo-fornecedores-sap",
+    title: "Automação do ciclo de fornecedores integrado ao SAP",
+    result: "Cadastro de fornecedor com rastreio e reprocessamento",
+    metric: "ECC",
+    metricLabel: "integração com plataforma de fornecedores",
+    sector: "Compras",
+    summary:
+      "Implantação de integração entre SAP ECC e plataforma externa de fornecedores, do desenho funcional e técnico até cutover e Hypercare. Case anonimizado.",
+    context:
+      "O cadastro de fornecedor nascia fora do SAP e precisava voltar ao ERP com código, status e trilha de erro.",
+    challenge:
+      "Criação, atualização e bloqueio dependiam de replicação manual entre a plataforma e o SAP ECC.",
+    approach: [
+      "Desenho funcional e técnico da integração.",
+      "APIs e desenvolvimento ABAP para criação, atualização, bloqueio, desbloqueio e reativação.",
+      "Retorno do código ERP para a plataforma.",
+      "Logs e reprocessamento.",
+      "Testes unitários, testes integrados, QA e UAT.",
+      "Cutover, go-live e Hypercare.",
+    ],
+    results: [
+      "Ciclo de fornecedor tratado na integração",
+      "Código ERP devolvido à plataforma",
+      "Erro com log e caminho de reprocessamento",
+      "Entrada em produção com Hypercare",
+    ],
+    stack: ["SAP ECC", "APIs", "ABAP", "Hypercare"],
+  },
+  {
+    slug: "ecossistema-crm-sap",
+    title: "Integração dos processos comerciais entre CRM e SAP",
+    result: "Continuidade entre venda e execução no SAP",
+    metric: "CRM",
+    metricLabel: "implementação de integração empresarial",
+    sector: "Implementação de integração",
+    summary:
+      "Implementação de integração empresarial entre CRM e SAP para cliente, venda, pedido, faturamento e crédito. Case anonimizado, sem depoimento e sem indicador inventado.",
+    context:
+      "O comercial operava no CRM e a execução do pedido, do faturamento e do crédito permanecia no SAP.",
+    challenge:
+      "Cadastro, histórico e documentos comerciais não circulavam com retorno do código SAP.",
+    approach: [
+      "Cadastro e atualização de clientes, com carga inicial.",
+      "Processamento por job e comunicação via API e JSON.",
+      "Retorno do código SAP.",
+      "Histórico de vendas, pedidos, faturamento, claims e notas de crédito.",
+      "Automação de ordens de venda.",
+    ],
+    results: [
+      "Cliente e código SAP no mesmo fluxo",
+      "Histórico e documentos comerciais disponíveis na integração",
+      "Ordem de venda encaminhada ao SAP",
+      "Continuidade entre a venda e a execução",
+    ],
+    stack: ["CRM", "SAP", "API", "JSON"],
+  },
 ];
 
 export function getCase(slug: string) {

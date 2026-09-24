@@ -20,7 +20,7 @@ export function Footer() {
         <div className="lg:col-span-2">
           <Logo light />
           <p className="mt-4 max-w-sm text-sm leading-6 text-white/70">
-            Consultoria SAP para médio e grande porte. S/4HANA, AMS, integração e inteligência artificial, com especialistas seniores e decisão curta.
+            Technology & Business Solutions. SAP, integrações, inteligência artificial, automação e produtos digitais, com especialistas seniores.
           </p>
           <div className="mt-6 flex gap-3">
             <a href={siteConfig.linkedin} className="inline-flex size-10 items-center justify-center rounded-full border border-white/15 hover:bg-white/10" aria-label="LinkedIn" target="_blank" rel="noreferrer">

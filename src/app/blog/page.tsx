@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BlogList } from "@/components/blog/blog-list";
+import { SeoFaq } from "@/components/sections/seo-faq";
 import { PageHero } from "@/components/sections/page-hero";
 import { pageMeta } from "@/lib/seo";
 
@@ -24,6 +25,7 @@ export default function BlogPage() {
       <section className="mx-auto max-w-6xl px-5 py-16 md:px-8">
         <BlogList />
       </section>
+      <SeoFaq />
     </>
   );
 }

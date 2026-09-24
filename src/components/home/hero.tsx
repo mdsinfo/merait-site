@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { headlines, siteConfig, whatsappHref } from "@/lib/site";
+import { headlines, siteConfig } from "@/lib/site";
 
 const stack = [
   { label: "SAP S/4HANA", detail: "Processos de registro" },
@@ -51,20 +51,18 @@ export function Hero() {
         <div>
           <p className="max-w-xl text-sm font-medium leading-6 text-white/75">{headlines.eyebrow}</p>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-            Transformamos tecnologia em <span className="text-lime">resultados</span> para o seu negócio.
+            Tecnologia, SAP e Inteligência Artificial para acelerar os <span className="text-lime">resultados</span> do seu negócio.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/75">{headlines.subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="white" size="lg">
               <Link href="/contato">
-                Solicitar Diagnóstico
+                Solicitar Diagnóstico Gratuito
                 <ArrowRight />
               </Link>
             </Button>
             <Button asChild variant="inverse" size="lg">
-              <a href={whatsappHref("Olá, quero falar com um especialista MERAIT.")} target="_blank" rel="noreferrer">
-                Falar com Especialista
-              </a>
+              <Link href="/agendamento">Agendar Reunião</Link>
             </Button>
           </div>
           <p className="mt-4 max-w-xl text-sm leading-6 text-white/60">

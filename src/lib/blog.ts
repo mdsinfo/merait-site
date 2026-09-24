@@ -7,7 +7,7 @@ export type Post = {
   slug: string;
   title: string;
   description: string;
-  category: "Artigos" | "Insights" | "Reforma Tributária" | "SAP BTP" | "SAP S/4HANA" | "Inteligência Artificial";
+  category: "Artigos" | "Insights" | "Reforma Tributária" | "SAP BTP" | "SAP S/4HANA" | "Inteligência Artificial" | "Logística";
   date: string;
   readingMinutes: number;
   blocks: Block[];
@@ -20,6 +20,7 @@ export const blogCategories = [
   "SAP BTP",
   "SAP S/4HANA",
   "Inteligência Artificial",
+  "Logística",
 ] as const;
 
 export const posts: Post[] = [
@@ -237,6 +238,62 @@ export const posts: Post[] = [
         type: "p",
         text: "Integração sem monitoramento devolve o problema para o fechamento. Por isso o projeto da MERAIT entrega o fluxo, a fila de erro e o procedimento do AMS. O ganho aparece quando o comercial deixa de conferir planilha para saber se o pedido existe.",
       },
+    ],
+  },
+  {
+    slug: "logistica-inteligente-no-sap",
+    title: "Logística inteligente começa no agendamento, não no pátio lotado",
+    description: "Por que fila, doca e integração SAP precisam ser tratados como um único fluxo operacional.",
+    category: "Logística",
+    date: "2026-05-18",
+    readingMinutes: 5,
+    blocks: [
+      { type: "p", text: "A fila na portaria é o sintoma. A causa costuma ser janela combinada por telefone, planilha e e-mail, sem capacidade real da doca e sem status no SAP." },
+      { type: "h2", text: "O que a operação precisa enxergar" },
+      { type: "ul", items: ["Janela reservada por tipo de veículo e turno.", "Comunicação automática com transportadora e cliente.", "Status que chega ao pedido, à entrega e ao pátio.", "Indicador de espera antes que a fila vire custo."] },
+      { type: "p", text: "A MERAIT trata agendamento, doca e SAP como um produto operacional, não como um relatório depois do fato." },
+    ],
+  },
+  {
+    slug: "rfid-no-patio-logistico",
+    title: "RFID no pátio: entrada, permanência e saída sem registro manual",
+    description: "Como o controle de pátio deixa de depender de apontamento quando a antena registra o veículo.",
+    category: "Logística",
+    date: "2026-06-02",
+    readingMinutes: 5,
+    blocks: [
+      { type: "p", text: "Check-in feito na mão atrasa a doca e perde o tempo real de permanência. RFID registra entrada, permanência e saída e devolve o fato para a operação." },
+      { type: "h2", text: "Onde o ganho aparece" },
+      { type: "ul", items: ["Acesso sem fila de cadastro.", "Permanência medida, não estimada.", "Saída conferida com o agendamento.", "Indicador disponível para o AMS e para o SAP."] },
+      { type: "p", text: "O RFID Logistics da MERAIT existe para esse ciclo. O agendamento continua sendo a reserva. O RFID confirma o que aconteceu no pátio." },
+    ],
+  },
+  {
+    slug: "cte-no-fluxo-sap",
+    title: "CT-e no SAP: o transporte não pode ficar fora do documento",
+    description: "Por que o conhecimento de transporte precisa nascer junto com a expedição e o financeiro.",
+    category: "Artigos",
+    date: "2026-06-16",
+    readingMinutes: 5,
+    blocks: [
+      { type: "p", text: "CT-e lançado depois da viagem vira retrabalho fiscal e atraso de frete. O documento precisa acompanhar a carga, não corrigir o passado." },
+      { type: "h2", text: "O que a operação precisa fechar" },
+      { type: "ul", items: ["Emissão alinhada à expedição.", "Rejeição visível antes do fechamento.", "Status de volta para o pedido e para o transporte.", "AMS preparado para o erro recorrente."] },
+      { type: "p", text: "A MERAIT trata CT-e como parte do fluxo SAP e da automação fiscal, junto com NF-e e MDF-e." },
+    ],
+  },
+  {
+    slug: "mdfe-e-o-encerramento-da-viagem",
+    title: "MDF-e: o manifesto precisa encerrar com a viagem",
+    description: "Como o manifesto eletrônico deixa de ser uma pendência depois que o caminhão já saiu.",
+    category: "Artigos",
+    date: "2026-06-30",
+    readingMinutes: 4,
+    blocks: [
+      { type: "p", text: "MDF-e aberto depois da saída gera contingência e fila no fiscal. O encerramento tem de estar no mesmo fluxo da expedição." },
+      { type: "h2", text: "Onde o processo quebra" },
+      { type: "ul", items: ["Manifesto sem vínculo com a carga.", "Encerramento manual no fim do dia.", "Evento rejeitado sem dono.", "Transporte e fiscal em sistemas diferentes."] },
+      { type: "p", text: "No desenho da MERAIT, o MDF-e acompanha a expedição e o SAP permanece o registro do documento." },
     ],
   },
 ];

@@ -2,6 +2,7 @@ export const experienceCategories = [
   "Indústria e Manufatura",
   "Varejo e Consumo",
   "Logística e Transporte",
+  "Mineração",
   "Parceiros SAP",
 ] as const;
 
@@ -29,7 +30,7 @@ export const experienceEntries: ExperienceEntry[] = [
   { id: "cnh-industrial", name: "CNH Industrial", category: "Indústria e Manufatura" },
   { id: "arcelormittal-gonvarri", name: "ArcelorMittal Gonvarri", category: "Indústria e Manufatura" },
   { id: "bosch", name: "Bosch", category: "Indústria e Manufatura" },
-  { id: "nexa-resources", name: "Nexa Resources", category: "Indústria e Manufatura" },
+  { id: "nexa-resources", name: "Nexa Resources", category: "Mineração" },
   { id: "ceratizit", name: "Ceratizit", category: "Indústria e Manufatura" },
   { id: "markem-imaje", name: "Markem-Imaje", category: "Indústria e Manufatura" },
   { id: "biosev", name: "Biosev", category: "Indústria e Manufatura" },

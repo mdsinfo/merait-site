@@ -5,15 +5,17 @@ export function pageMeta({
   title,
   description,
   path,
+  absolute = false,
 }: {
   title: string;
   description: string;
   path: string;
+  absolute?: boolean;
 }): Metadata {
-  const full = `${title} | ${siteConfig.name}`;
+  const full = absolute ? title : `${title} | ${siteConfig.name}`;
   const url = new URL(path, siteConfig.url).toString();
   return {
-    title,
+    title: absolute ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     openGraph: {

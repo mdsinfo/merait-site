@@ -18,7 +18,7 @@ export default function ClientesExperienciaPage() {
     <>
       <PageHero
         eyebrow="Apresentação comercial"
-        title="Experiência construída em operações que não param"
+        title="Experiência construída em grandes empresas"
         description="Segmentos, empresas, cases e parceiros SAP em uma leitura única para conversas comerciais. A atuação refere-se à trajetória profissional dos especialistas da MERAIT."
         crumbs={[
           { name: "Home", path: "/" },

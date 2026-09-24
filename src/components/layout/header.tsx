@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 function isActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
   if (href === "/solucoes") return solutionPaths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
-  if (href === "/#produtos") return productPaths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
+  if (href === "/produtos") return productPaths.some((path) => pathname === path || pathname.startsWith(`${path}/`));
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 

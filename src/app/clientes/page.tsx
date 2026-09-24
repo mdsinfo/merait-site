@@ -7,9 +7,9 @@ import { PageHero } from "@/components/sections/page-hero";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata: Metadata = pageMeta({
-  title: "Clientes",
+  title: "Experiência de Mercado",
   description:
-    "Empresas onde os especialistas da MERAIT já atuaram em projetos de SAP, AMS, integração e inteligência artificial.",
+    "Nossa experiência foi construída em empresas líderes de seus segmentos através de projetos de transformação digital, SAP, integrações, AMS e automação empresarial.",
   path: "/clientes",
 });
 
@@ -17,12 +17,12 @@ export default function ClientesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Clientes"
-        title="Empresas onde nossos especialistas já atuaram"
-        description="A experiência foi construída em projetos estratégicos de empresas líderes. Logotipos oficiais entram quando houver autorização; até lá, o nome permanece como marca."
+        eyebrow="Experiência de Mercado"
+        title="Experiência construída em empresas líderes"
+        description="Nossa experiência foi construída em empresas líderes de seus segmentos através de projetos de transformação digital, SAP, integrações, AMS e automação empresarial."
         crumbs={[
           { name: "Home", path: "/" },
-          { name: "Clientes", path: "/clientes" },
+          { name: "Experiência de Mercado", path: "/clientes" },
         ]}
       />
       <ExperienceMarquee />

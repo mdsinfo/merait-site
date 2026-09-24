@@ -7,7 +7,7 @@ export function ExperienceMarquee({ withDisclaimer = true }: { withDisclaimer?: 
     <section className="bg-[#070B16] pb-16 text-white" id="clientes">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-lime">Clientes e mercado</p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">Trajetória em operações que não podem parar</h2>
+        <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">Experiência construída em grandes empresas</h2>
       </div>
       <div className="marquee mt-8 overflow-hidden">
         <div className="animate-marquee flex w-max gap-3 px-5">

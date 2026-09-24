@@ -20,11 +20,11 @@ export const solutions: Solution[] = [
     href: "/sap-s4hana",
     icon: "layers",
     navLabel: "SAP S/4HANA",
-    metaTitle: "Consultoria SAP S/4HANA",
-    eyebrow: "Projetos SAP Enterprise",
-    title: "Consultoria SAP S/4HANA com critério de go-live",
+    metaTitle: "Consultoria SAP S/4HANA | Implementação, AMS e Evolução SAP",
+    eyebrow: "Consultoria SAP S/4HANA",
+    title: "Implementação, migração e evolução de SAP S/4HANA",
     description:
-      "Implantação, conversão, rollout e melhoria de SAP S/4HANA para empresas que precisam evoluir o ERP com dono de processo, dado mestre e teste integrado.",
+      "Projetos SAP para empresas que precisam sair do ECC, estabilizar o S/4HANA ou evoluir o processo sem perder o critério de go-live.",
     offerings: [
       {
         title: "Implantações",
@@ -55,6 +55,22 @@ export const solutions: Solution[] = [
     ],
     faqs: [
       {
+        q: "Quanto custa um projeto SAP?",
+        a: "O valor depende do caminho (implantação, migração ou rollout), do volume de desenvolvimentos, da qualidade dos dados e do número de empresas. O diagnóstico gratuito explicita escopo e investimento antes da proposta.",
+      },
+      {
+        q: "Quanto tempo leva uma implementação SAP?",
+        a: "O prazo muda com o cenário: conversão de ECC, implantação nova ou rollout de template. O assessment separa o que entra na primeira onda e o que fica para o ciclo seguinte.",
+      },
+      {
+        q: "A MERAIT atua com SAP ECC e S/4HANA?",
+        a: "Sim. Atuamos na sustentação e na leitura do ECC e em implantação, conversão, rollout e melhoria de SAP S/4HANA.",
+      },
+      {
+        q: "O que é consultoria SAP S/4HANA?",
+        a: "É o desenho e a entrega do projeto: processo, configuração, dados, teste integrado e critério de go-live. Depois do corte, hypercare e AMS sustentam a operação.",
+      },
+      {
         q: "Implantação, conversão ou rollout: como a MERAIT escolhe o caminho?",
         a: "A decisão considera a qualidade do legado, o volume de desenvolvimentos, o prazo e a necessidade de padronizar mais de uma empresa. O diagnóstico explicita o caminho e o que fica de fora.",
       },
@@ -73,30 +89,30 @@ export const solutions: Solution[] = [
     href: "/ams-sap",
     icon: "headset",
     navLabel: "AMS SAP",
-    metaTitle: "AMS SAP",
-    eyebrow: "Application Management Services",
-    title: "AMS SAP para sustentar e evoluir o ambiente",
+    metaTitle: "AMS SAP | Sustentação e Evolução SAP",
+    eyebrow: "AMS SAP",
+    title: "Muito mais que suporte SAP.",
     description:
-      "AMS SAP com suporte funcional e técnico, hypercare, monitoramento e gestão de demandas para o ambiente evoluir depois do projeto.",
+      "Garantimos estabilidade operacional, evolução contínua e atendimento próximo ao negócio para que sua empresa possa focar no crescimento.",
     offerings: [
       {
-        title: "Suporte Funcional",
-        text: "Atendimento às áreas de negócio em processos SAP, com análise de causa e orientação de uso.",
+        title: "SLA",
+        text: "Acordo de atendimento por impacto na operação, com horário, canal e tempo de resposta definidos no contrato.",
       },
       {
-        title: "Suporte Técnico",
-        text: "Incidentes de desenvolvimento, performance, jobs, interfaces e correções no código suportado.",
-      },
-      {
-        title: "Monitoramento",
-        text: "Acompanhamento de filas, interfaces e rotinas críticas antes que o impacto chegue ao usuário.",
+        title: "Governança",
+        text: "Rito com a liderança para prioridade, causa e decisão. O backlog deixa de competir no escuro.",
       },
       {
         title: "Hypercare",
-        text: "Estabilização assistida após o go-live, com critério claro para encerrar a fase e entrar na rotina de AMS.",
+        text: "Estabilização assistida depois do go-live, com critério claro para encerrar a fase e entrar na rotina de AMS.",
       },
       {
-        title: "Gestão de Demandas",
+        title: "Evolução contínua",
+        text: "Melhorias pequenas entram no ritmo do contrato, em vez de esperar um novo projeto para cada ajuste.",
+      },
+      {
+        title: "Gestão de demanda",
         text: "Fila única para incidente, dúvida e melhoria, com prioridade, esforço e retorno esperado.",
       },
     ],
@@ -107,6 +123,10 @@ export const solutions: Solution[] = [
       "Melhorias pequenas entrando no ritmo do AMS",
     ],
     faqs: [
+      {
+        q: "O que é AMS SAP?",
+        a: "Application Management Services: sustentação funcional e técnica do SAP, com SLA, governança, hypercare e evolução contínua do ambiente.",
+      },
       {
         q: "AMS substitui o time interno?",
         a: "O modelo complementa o time do cliente. O conhecimento fica documentado e as decisões de negócio permanecem com os donos do processo.",
@@ -126,11 +146,11 @@ export const solutions: Solution[] = [
     href: "/integracoes",
     icon: "workflow",
     navLabel: "Integrações",
-    metaTitle: "Integração SAP",
-    eyebrow: "Integrações corporativas",
-    title: "Integração SAP com CRM, portais e APIs",
+    metaTitle: "Integrações SAP | APIs, CRM, Salesforce e BTP",
+    eyebrow: "Integrações SAP",
+    title: "Sistemas isolados geram retrabalho. A integração devolve o fluxo ao SAP.",
     description:
-      "Integração SAP com CRM, portais de fornecedores, Salesforce, APIs REST e middleware, com sistema de registro e fila de erro visível.",
+      "Integramos SAP a CRM, Salesforce, APIs, Power Platform, NIMBI e inteligência artificial, com sistema de registro e troca em tempo real.",
     offerings: [
       {
         title: "SAP x CRM",
@@ -149,8 +169,16 @@ export const solutions: Solution[] = [
         text: "Exposição e consumo de APIs para portais, parceiros e produtos digitais, com contrato e monitoramento.",
       },
       {
+        title: "SAP x Power Platform",
+        text: "Aplicativos e fluxos de aprovação no entorno do SAP, com o ERP como registro do documento e do status.",
+      },
+      {
+        title: "SAP x IA",
+        text: "Copilotos e agentes consultam o processo integrado. A sugestão volta para uma pessoa aprovar no sistema de registro.",
+      },
+      {
         title: "SAP x Middleware",
-        text: "Orquestração por Integration Suite ou middleware equivalente, com reprocessamento e trilha de erro.",
+        text: "Orquestração por SAP BTP Integration Suite ou middleware equivalente, com reprocessamento e trilha de erro.",
       },
     ],
     outcomes: [
@@ -160,6 +188,10 @@ export const solutions: Solution[] = [
       "Contrato de API versionado e monitorado",
     ],
     faqs: [
+      {
+        q: "Quais sistemas podem ser integrados ao SAP?",
+        a: "CRM, Salesforce, Dynamics, portais, NIMBI, Power Platform, APIs REST e produtos MERAIT. O desenho define o sistema de registro antes do desenvolvimento.",
+      },
       {
         q: "Toda integração precisa de middleware?",
         a: "Não. APIs simples e bem governadas podem ser diretas. O middleware entra quando há orquestração, volume, transformação ou vários consumidores.",

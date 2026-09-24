@@ -3,20 +3,41 @@ import { siteConfig } from "@/lib/site";
 export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: siteConfig.name,
-    url: siteConfig.url,
-    description: siteConfig.description,
-    email: siteConfig.email,
-    areaServed: "BR",
-    knowsLanguage: "pt-BR",
-    serviceType: [
-      "Consultoria SAP",
-      "SAP S/4HANA",
-      "AMS SAP",
-      "Integrações corporativas",
-      "SAP BTP",
-      "Inteligência Artificial",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        email: siteConfig.email,
+        description: siteConfig.description,
+        areaServed: "BR",
+        sameAs: [siteConfig.linkedin, siteConfig.instagram],
+      },
+      {
+        "@type": "LocalBusiness",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        email: siteConfig.email,
+        description: siteConfig.description,
+        areaServed: "BR",
+      },
+      {
+        "@type": "ProfessionalService",
+        name: siteConfig.name,
+        url: siteConfig.url,
+        description: siteConfig.description,
+        email: siteConfig.email,
+        areaServed: "BR",
+        knowsLanguage: "pt-BR",
+        serviceType: [
+          "Consultoria SAP",
+          "SAP S/4HANA",
+          "AMS SAP",
+          "Integrações corporativas",
+          "SAP BTP",
+          "Inteligência Artificial",
+        ],
+      },
     ],
   };
 

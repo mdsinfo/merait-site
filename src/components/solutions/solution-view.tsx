@@ -6,6 +6,7 @@ import { FaqJsonLd } from "@/components/seo/json-ld";
 import { AiFlow } from "@/components/home/ai-flow";
 import type { Solution } from "@/lib/solutions";
 import { solutions } from "@/lib/solutions";
+import { S4Landing } from "@/components/solutions/s4-landing";
 
 export function SolutionView({ solution }: { solution: Solution }) {
   const related = solutions.filter((item) => item.slug !== solution.slug).slice(0, 3);
@@ -30,6 +31,7 @@ export function SolutionView({ solution }: { solution: Solution }) {
             </article>
           ))}
         </div>
+        {solution.slug === "sap-s4hana" ? <S4Landing /> : null}
         {solution.slug === "inteligencia-artificial" ? (
           <div className="mt-12 rounded-3xl bg-ink p-6 text-white md:p-8">
             <h2 className="text-2xl font-semibold">Arquitetura integrada</h2>
